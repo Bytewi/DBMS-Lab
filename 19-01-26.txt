@@ -1,1 +1,26 @@
-DDL:1)  Create : To create tables , procedures , triggers etc.2)  Alter : Modify the structure of table.3)  Truncate : To delete all the data but not the Table.4)  Drop : Table will be deleted.5)  Rename : Rename tables , columns in DBMS.DML:1)  Insert Command : Data into the table.2)  Update Command : Update the columns.ASSIGNMENT:CREATE TABLE students (    prn NUMBER PRIMARY KEY,    name VARCHAR2(50),    gender VARCHAR2(10),    age NUMBER,    course VARCHAR2(30));INSERT INTO students VALUES (101, 'Amit Sharma', 'Male', 20, 'DBMS');INSERT INTO students VALUES (102, 'Priya Patil', 'Female', 19, 'DBMS');INSERT INTO students VALUES (103, 'Rahul Verma', 'Male', 21, 'DBMS');INSERT INTO students VALUES (104, 'Purva Kulkarni', 'Female', 20, 'DBMS');
+DDL:
+1)  Create : To create tables , procedures , triggers etc.
+2)  Alter : Modify the structure of table.
+3)  Truncate : To delete all the data but not the Table.
+4)  Drop : Table will be deleted.
+5)  Rename : Rename tables , columns in DBMS.
+
+DML:
+1)  Insert Command : Data into the table.
+2)  Update Command : Update the columns.
+
+ASSIGNMENT:
+
+CREATE TABLE students (
+    prn NUMBER PRIMARY KEY,
+    name VARCHAR2(50),
+    gender VARCHAR2(10),
+    age NUMBER,
+    course VARCHAR2(30)
+);
+
+INSERT INTO students VALUES (101, 'Amit Sharma', 'Male', 20, 'DBMS');
+INSERT INTO students VALUES (102, 'Priya Patil', 'Female', 19, 'DBMS');
+INSERT INTO students VALUES (103, 'Rahul Verma', 'Male', 21, 'DBMS');
+INSERT INTO students VALUES (104, 'Purva Kulkarni', 'Female', 20, 'DBMS');
+gdcsdvuyygsu fgweiur gueg feuirfgbwyu f fueg 7ewr 87er78 wtr7t7r g7 r87w fr87wr8 w78r wrr9e qwivgtv7rc3qr
