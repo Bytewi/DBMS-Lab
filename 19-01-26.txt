@@ -23,4 +23,4 @@ INSERT INTO students VALUES (101, 'Amit Sharma', 'Male', 20, 'DBMS');
 INSERT INTO students VALUES (102, 'Priya Patil', 'Female', 19, 'DBMS');
 INSERT INTO students VALUES (103, 'Rahul Verma', 'Male', 21, 'DBMS');
 INSERT INTO students VALUES (104, 'Purva Kulkarni', 'Female', 20, 'DBMS');
-gdcsdvuyygsu fgweiur gueg feuirfgbwyu f fue
+gdcsdvuyygsu fgweiur gue
