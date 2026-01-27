@@ -41,16 +41,8 @@ INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
 
 
 -- =====================================
--- PROGRAM 3 : DEPARTMENT TABLE 
+-- PROGRAM 3 : Instructor TABLE 
 -- =====================================
-
-CREATE TABLE DEPARTMENT (
-  dept_id NUMBER PRIMARY KEY,
-  dept_name VARCHAR2(50) NOT NULL
-);
-
-INSERT INTO DEPARTMENT (dept_id, dept_name)
-VALUES (1, 'COMPUTER SCIENCE');
 
 CREATE TABLE INSTRUCTOR (
   instructor_id NUMBER PRIMARY KEY,
@@ -217,4 +209,5 @@ INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('WATSON','2340',60);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('WATSON','2245',45);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('NEWTON','1320',55);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('NEWTON','1310',50);
+
 
