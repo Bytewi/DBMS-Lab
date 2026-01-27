@@ -44,25 +44,34 @@ INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
 -- PROGRAM 3 : DEPARTMENT TABLE 
 -- =====================================
 
-CREATE TABLE DEPARTMENT(
-  dept_id INT PRIMARY KEY,
-  name VARCHAR(50) NOT NULL,
-  building VARCHAR(50),
-  budget DECIMAL(12,2),
-  university_id INT,
-  FOREIGN KEY(university_id) REFERENCES UNIVERSITY(university_id)
+CREATE TABLE DEPARTMENT (
+  dept_id NUMBER PRIMARY KEY,
+  dept_name VARCHAR2(50) NOT NULL
 );
 
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(1,'Computer Science','Taylor',100000,1);
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(2,'Mathematics','Watson',90000,1);
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(3,'Physics','Newton',85000,1);
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(4,'Chemistry','Curie',78000,2);
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(5,'Biology','Darwin',82000,2);
+INSERT INTO DEPARTMENT (dept_id, dept_name)
+VALUES (1, 'COMPUTER SCIENCE');
+
+CREATE TABLE INSTRUCTOR (
+  instructor_id NUMBER PRIMARY KEY,
+  name VARCHAR2(50) NOT NULL,
+  dept_id NUMBER,
+  is_hod CHAR(1) DEFAULT 'N' CHECK (is_hod IN ('Y','N')),
+  salary NUMBER(10,2),
+  CONSTRAINT fk_instructor_dept
+    FOREIGN KEY (dept_id)
+    REFERENCES DEPARTMENT (dept_id)
+);
+
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary)
+VALUES (1, 'JOHN DOE', 1, 'Y', 80000);
+
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, is_hod, salary)
+VALUES (2, 'JOHN SMITH', 1, 'N', 75000);
+
+INSERT INTO INSTRUCTOR (instructor_id, name, dept_id, salary)
+VALUES (3, 'JANE DOE', 1, 72000);
+
 
 
 -- =====================================
@@ -208,3 +217,4 @@ INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('WATSON','2340',60);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('WATSON','2245',45);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('NEWTON','1320',55);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('NEWTON','1310',50);
+
