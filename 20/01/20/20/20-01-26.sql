@@ -3,41 +3,37 @@
 -- =====================================
 
 CREATE TABLE UNIVERSITY (
-    university_id INT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
+    university_id NUMBER PRIMARY KEY,
+    name VARCHAR2(100) NOT NULL
 );
 
-INSERT INTO UNIVERSITY (university_id, name) VALUES (1,'Example University');
-INSERT INTO UNIVERSITY (university_id, name) VALUES (2,'Another University');
-INSERT INTO UNIVERSITY (university_id, name) VALUES (3,'Third University');
-INSERT INTO UNIVERSITY (university_id, name) VALUES (4,'Fourth University');
-INSERT INTO UNIVERSITY (university_id, name) VALUES (5,'Fifth University');
-INSERT INTO UNIVERSITY (university_id, name) VALUES (6,'Sixth University');
-INSERT INTO UNIVERSITY (university_id, name) VALUES (7,'Seventh University');
-
+INSERT INTO UNIVERSITY VALUES (1,'Example University');
+INSERT INTO UNIVERSITY VALUES (2,'Another University');
+INSERT INTO UNIVERSITY VALUES (3,'Third University');
+INSERT INTO UNIVERSITY VALUES (4,'Fourth University');
+INSERT INTO UNIVERSITY VALUES (5,'Fifth University');
+INSERT INTO UNIVERSITY VALUES (6,'Sixth University');
+INSERT INTO UNIVERSITY VALUES (7,'Seventh University');
 
 -- =====================================
 -- PROGRAM 2 : DEPARTMENT TABLE
 -- =====================================
-CREATE TABLE DEPARTMENT(
-  dept_id INT PRIMARY KEY,
-  name VARCHAR(50) NOT NULL,
-  building VARCHAR(50),
-  budget DECIMAL(12,2),
-  university_id INT,
-  FOREIGN KEY(university_id) REFERENCES UNIVERSITY(university_id)
+CREATE TABLE DEPARTMENT (
+    dept_id NUMBER PRIMARY KEY,
+    name VARCHAR2(50) NOT NULL,
+    building VARCHAR2(50),
+    budget NUMBER(12,2),
+    university_id NUMBER,
+    CONSTRAINT fk_dept_univ
+        FOREIGN KEY (university_id)
+        REFERENCES UNIVERSITY(university_id)
 );
 
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(1,'Computer Science','Taylor',100000,1);
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(2,'Mathematics','Watson',90000,1);
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(3,'Physics','Newton',85000,1);
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(4,'Chemistry','Curie',78000,2);
-INSERT INTO DEPARTMENT(dept_id,name,building,budget,university_id)VALUES
-(5,'Biology','Darwin',82000,2);
+INSERT INTO DEPARTMENT VALUES (1,'Computer Science','Taylor',100000,1);
+INSERT INTO DEPARTMENT VALUES (2,'Mathematics','Watson',90000,1);
+INSERT INTO DEPARTMENT VALUES (3,'Physics','Newton',85000,1);
+INSERT INTO DEPARTMENT VALUES (4,'Chemistry','Curie',78000,2);
+INSERT INTO DEPARTMENT VALUES (5,'Biology','Darwin',82000,2);
 
 
 -- =====================================
@@ -209,5 +205,4 @@ INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('WATSON','2340',60);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('WATSON','2245',45);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('NEWTON','1320',55);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('NEWTON','1310',50);
-
 
