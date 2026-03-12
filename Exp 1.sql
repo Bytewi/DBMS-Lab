@@ -206,3 +206,4 @@ INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('WATSON','2245',45);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('NEWTON','1320',55);
 INSERT INTO CLASSROOM(building,room_number,capacity)VALUES('NEWTON','1310',50);
 
+
