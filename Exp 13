@@ -1,0 +1,25 @@
+#PRACTICAL 13
+
+CREATE OR REPLACE TRIGGER tri_st
+BEFORE UPDATE ON st_info
+BEGIN
+   DBMS_OUTPUT.PUT_LINE('This is statement level trigger fired');
+END;
+/
+SET SERVEROUTPUT ON;
+UPDATE st_info
+SET total = sub1 + sub2 + sub3 + sub4;
+
+
+
+CREATE OR REPLACE TRIGGER tri_row
+BEFORE UPDATE ON st_info
+FOR EACH ROW
+BEGIN
+   DBMS_OUTPUT.PUT_LINE('This is row level trigger fired');
+END;
+/
+SET SERVEROUTPUT ON;
+UPDATE st_info
+SET total = sub1 + sub2 + sub3 + sub4
+WHERE sub1 > 80;
